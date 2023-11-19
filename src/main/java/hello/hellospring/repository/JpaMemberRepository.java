@@ -34,7 +34,8 @@ public class JpaMemberRepository implements MemberRepository{
     // PK 기반이 아닌 것들은 JPQL을 작성해 줘야함
     @Override
     public Optional<Member> findByName(String name) {
-        List<Member> resultList = em.createQuery("select m from Member m where m.name = :name", Member.class).setParameter("name", name).getResultList();
+        List<Member> resultList = em.createQuery("select m from Member m where m.name = :name", Member.class)
+                                        .setParameter("name", name).getResultList();
         return resultList.stream().findAny();
     }
 

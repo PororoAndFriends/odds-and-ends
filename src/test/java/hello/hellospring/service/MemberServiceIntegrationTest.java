@@ -1,10 +1,12 @@
 package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
+import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,20 +17,20 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @Transactional
 class MemberServiceIntegrationTest {
 
-    MemberService memberservice;
-    MemoryMemberRepository memberRepository;
+    @Autowired MemberService memberservice;
+    @Autowired MemberRepository memberRepository;
 
-    @BeforeEach
-    public void beforeEach(){
-        memberRepository = new MemoryMemberRepository();
-        // DI(Dependancy Injection)방식
-        memberservice = new MemberService(memberRepository);
-    }
-
-    @AfterEach
-    public void afterEach(){
-        memberRepository.clearStore();
-    }
+//    @BeforeEach
+//    public void beforeEach(){
+//        memberRepository = new MemoryMemberRepository();
+//        // DI(Dependancy Injection)방식
+//        memberservice = new MemberService(memberRepository);
+//    }
+//
+//    @AfterEach
+//    public void afterEach(){
+//        memberRepository.clearStore();
+//    }
 
     @Test
     void 회원가입() {
@@ -65,11 +67,4 @@ class MemberServiceIntegrationTest {
 //        }
     }
 
-    @Test
-    void findMembers() {
-    }
-
-    @Test
-    void findOne() {
-    }
 }

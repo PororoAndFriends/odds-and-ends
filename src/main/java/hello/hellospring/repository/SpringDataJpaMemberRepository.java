@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 // JpaRepository를 extends하면 interface가 구현체를 자동으로 만들어주어 Spring Bean에 등록
+// extends를 할 때 첫번째 타입은 키 타입, 두 번째는 PK의 타입을 넣어주면 됨
 public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Long>, MemberRepository {
 
     // select m from Member m where m.name = ? 식의 쿼리를 짜줌

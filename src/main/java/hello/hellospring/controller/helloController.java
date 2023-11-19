@@ -24,7 +24,7 @@ public class helloController {
     }
 
     // API 방식
-    // request body : https body에 값을 넣어 전달
+    // request body : https body에 값을 넣어 전달-
     // 데이터만 주고받을때 편함
     // string을 return하면 string으로 넘겨줌
     @GetMapping("hello-string")
@@ -39,14 +39,26 @@ public class helloController {
     // class를 return하면 json 형식(hash와 유사)으로 넘겨줌
     @GetMapping("hello-api")
     @ResponseBody
-    public Hello helloApi(@RequestParam("name") String name, Model model){
+    public Hello helloApi(@RequestParam("name") String name,@RequestParam("age") int age, Model model){
         Hello hello = new Hello();
         hello.setName(name);
+        hello.setAge(age);
+
         return hello;
     }
 
     static class Hello{
         private String name;
+
+        private int age;
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
 
         public String getName() {
             return name;
@@ -55,7 +67,6 @@ public class helloController {
         public void setName(String name) {
             this.name = name;
         }
-
 
     }
 }
