@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int map[20][20];
 int n;
