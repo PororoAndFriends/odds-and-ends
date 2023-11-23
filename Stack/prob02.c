@@ -35,6 +35,8 @@ Node create_node_instance(Item i){
 	Node temp = (Node)malloc(sizeof(struct node));
 	temp->data = i;
 	temp->next = NULL;
+
+    return temp;
 }
 
 void destroy(Stack s){
@@ -51,8 +53,9 @@ void destroy(Stack s){
 
 void push(Stack s, Item i){
 	Node temp = create_node_instance(i);
-	temp->next = s->top;
-	s->top = temp;
+
+    if(s->top != NULL) temp->next = s->top;
+    s->top = temp;
 }
 
 bool is_empty(Stack s){
@@ -124,8 +127,6 @@ int main(){
 			break;
 		}
 	}
-	
-	
 }
 
 

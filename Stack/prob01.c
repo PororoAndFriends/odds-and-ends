@@ -78,7 +78,6 @@ Item peek(Stack s){
 };
 
 
-
 int main(){
 	
 	char buffer[100];
