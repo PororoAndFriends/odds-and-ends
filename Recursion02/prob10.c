@@ -37,6 +37,10 @@ void solv(int index, int k){
     }
 }
 
+
+
+
+
 int main(){
 
     scanf("%d", &N);

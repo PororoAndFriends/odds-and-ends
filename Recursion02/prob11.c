@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 int a[1000000];
 int n;
 
@@ -19,6 +20,16 @@ void clean_numlist(int level){
     }
 }
 
+bool lucky(int n, int k){
+    if (n % k == 0) {
+        return false;
+    } else if (n < k) {
+        return true;
+    }else{
+        lucky(n - n / k, k + 1);
+    }
+}
+
 int main(){
 
     scanf("%d", &n);
@@ -30,6 +41,9 @@ int main(){
     clean_numlist(n);
 
     if(a[n-1] != 0) printf("yes");
+    else printf("no");
+
+    if(lucky(n, 2)) printf("yes");
     else printf("no");
 
     return 0;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#define SIZE 300
+#define STACK_SIZE 300
 #define PATH 0
 #define WALL 1
 
@@ -14,7 +14,7 @@ typedef struct locate{
 typedef Locate Item;
 
 
-Item queue[SIZE];
+Item queue[STACK_SIZE];
 int rear = -1;
 int front = 0;
 int size = -1;
