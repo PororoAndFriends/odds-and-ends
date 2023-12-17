@@ -3,7 +3,10 @@
 
 int n_queen(int level, int bord[15], int N);
 
-int abs(int num);
+int abs(int num) {
+    if(num < 0) return -num;
+    else return num;
+}
 
 int main(){
 
@@ -45,7 +48,3 @@ int n_queen(int level, int bord[15], int N) {
     return count;
 }
 
-int abs(int num) {
-    if(num < 0) return -num;
-    else return num;
-}
