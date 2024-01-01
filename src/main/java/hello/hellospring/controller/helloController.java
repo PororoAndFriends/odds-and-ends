@@ -11,14 +11,16 @@ public class helloController {
 
     @GetMapping("hello")
     public String hello(Model model){
-        model.addAttribute("data", "hello~");
+        model.addAttribute("data", "hello~!");
 
         return "hello";
     }
 
     @GetMapping("hello-mvc")
-    public String hello(@RequestParam("name") String name, Model model){
+    public String hello(@RequestParam(value = "name", defaultValue = "Pororo") String name,
+                        @RequestParam("age") String age, Model model){
         model.addAttribute("name", name);
+        model.addAttribute("age", age);
 
         return "hello-templete";
     }

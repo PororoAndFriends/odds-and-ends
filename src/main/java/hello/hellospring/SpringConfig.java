@@ -1,6 +1,5 @@
 package hello.hellospring;
 
-import hello.hellospring.controller.MemberController;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +10,13 @@ import org.springframework.context.annotation.Configuration;
 public class SpringConfig {
 
 //    private DataSource dataSource;
-//
 //    @Autowired
 //    public SpringConfig(DataSource dataSource) {
 //        this.dataSource = dataSource;
 //    }
 
+
 //    private EntityManager em;
-//
 //    public SpringConfig(EntityManager em) {
 //        this.em = em;
 //    }
@@ -47,7 +45,6 @@ public class SpringConfig {
 //    public TimeTraceAop timeTraceAop(){
 //        return new TimeTraceAop();
 //    }
-
 
 
 
