@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ApplicationContextSameBeanFindTest {
@@ -30,7 +31,7 @@ public class ApplicationContextSameBeanFindTest {
     void findBeanByName(){
         MemberRepository memberRepository = ac.getBean("memberRepository1", MemberRepository.class);
 
-        org.assertj.core.api.Assertions.assertThat(memberRepository).isInstanceOf(MemberRepository.class);
+        assertThat(memberRepository).isInstanceOf(MemberRepository.class);
     }
 
     @Test
@@ -43,7 +44,7 @@ public class ApplicationContextSameBeanFindTest {
         }
         System.out.println("beansOfType = " + beansOfType);
 
-        Assertions.assertThat(beansOfType.size()).isEqualTo(2);
+        assertThat(beansOfType.size()).isEqualTo(2);
     }
 
 
