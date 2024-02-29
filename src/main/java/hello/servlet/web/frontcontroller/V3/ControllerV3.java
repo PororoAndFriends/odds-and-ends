@@ -1,6 +1,6 @@
 package hello.servlet.web.frontcontroller.V3;
 
-import hello.servlet.web.frontcontroller.V2.ModelView;
+import hello.servlet.web.frontcontroller.ModelView;
 
 import java.util.Map;
 
