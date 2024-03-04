@@ -1,7 +1,7 @@
 package hello.servlet.web.frontcontroller.V2;
 
 import hello.servlet.web.frontcontroller.MyView;
-import hello.servlet.web.frontcontroller.V1.controller.MemberSaveControllerV2;
+import hello.servlet.web.frontcontroller.V2.controller.MemberSaveControllerV2;
 import hello.servlet.web.frontcontroller.V2.controller.MemberFormControllerV2;
 import hello.servlet.web.frontcontroller.V2.controller.MemberListControllerV2;
 import jakarta.servlet.ServletException;
