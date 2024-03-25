@@ -5,10 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 import pororoAndFriends.ToyProject01.domain.Article;
 import pororoAndFriends.ToyProject01.dto.ArticleListViewResponse;
-import pororoAndFriends.ToyProject01.dto.ArticleVIewResponse;
+import pororoAndFriends.ToyProject01.dto.ArticleViewResponse;
 import pororoAndFriends.ToyProject01.service.BlogService;
 
 import java.util.List;
@@ -31,8 +31,20 @@ public class BlogViewController {
     @GetMapping("/articles/{id}")
     public String getArticle(@PathVariable Long id, Model model) {
         Article article = blogService.findById(id);
-        model.addAttribute("article", new ArticleVIewResponse(article));
+        model.addAttribute("article", new ArticleViewResponse(article));
 
         return "article";
+    }
+
+    @GetMapping("/new-article")
+    public String newArticle(@RequestParam(required = false) Long id, Model model) {
+        if (id == null) {
+            model.addAttribute("article", new ArticleViewResponse());
+        }else{
+            Article article = blogService.findById(id);
+            model.addAttribute("article", new ArticleViewResponse(article));
+        }
+
+        return "articleCreateForm";
     }
 }
