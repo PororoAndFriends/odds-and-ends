@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 
 // /login 요청(loginProcessingUrl 설정된 주소) 이 오면, UserDetailsService 설정되어 있는 메서드 실행
+// 함수 종료시 @AuthenticationPrincipal 어노테이션이 만들어짐
 @Service
 @RequiredArgsConstructor
 public class PrincipalDetailsService implements UserDetailsService {

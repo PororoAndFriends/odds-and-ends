@@ -2,16 +2,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 페이지</title>
+<title>login page</title>
 </head>
 <body>
-<h1>로그인 페이지</h1>
+<h1>login page</h1>
 <hr/>
 <form action="/login" method="post">
 		<input type="text" name="username" placeholder="Username" /><br/>
 		<input type="password" name="password" placeholder="password" /><br/>
 	<button>로그인</button>
 </form>
+<!--링크 주소는 라이브러리 특성상 고정. 변경 불가능-->
+<a href="/oauth2/authorization/google"> google login </a> <br/>
+<a href="/oauth2/authorization/naver"> naver login </a> <br/>
 
 <a href="/joinForm"> join us!</a>
 </body>
